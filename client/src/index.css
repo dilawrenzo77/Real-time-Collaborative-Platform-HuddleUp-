@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+body{
+    margin: 0;
+    padding: 0;
+    outline: border-box;
+    font-family: 'Sora', sans-serif;
+    background-color: linear-gradient(to right, rgb(255, 228, 230), rgb(204, 251, 241));
+    overflow: hidden;
+}
+
+.backgr{
+    background: linear-gradient(to bottom right, #000814, #000814, #52b69a);
+}
+
+
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+
+.gradient-text {
+            background: linear-gradient(to bottom right, #04070b, #496aac, #0b0d0f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: 0;
+            line-height: 1.2;
+        }
