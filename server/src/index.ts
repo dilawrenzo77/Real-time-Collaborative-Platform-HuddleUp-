@@ -11,10 +11,11 @@ dotenv.config()
 
 const app = Express();
 const HOST = process.env.HOST as string;
+const HOST2 = process.env.HOST2 as string;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: [HOST],
+        origin: [HOST, HOST2],
         credentials: true 
     }
 });
@@ -24,7 +25,10 @@ const PORT = process.env.PORT;
 app.use(Express.json());
 app.use(Express.static('public'));
 app.use(cors({
-  origin: HOST,
+  origin: [
+    HOST,
+    HOST2
+  ],
   methods: ["GET", "POST"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
@@ -32,6 +36,12 @@ app.use(cors({
 
 app.use(cookieParser());
 app.use("/api", router);
+
+
+// Handle preflight requests
+app.options('*', cors());
+// Trust Vercel proxy
+app.set('trust proxy', 1);
 
 
 const connectedUsers = new Map(); // Map<socketId, User>
