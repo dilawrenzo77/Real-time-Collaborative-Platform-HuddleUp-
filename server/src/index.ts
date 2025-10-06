@@ -48,6 +48,16 @@ const PORT = process.env.PORT;
 app.use(Express.json());
 app.use(Express.static('public'));
 app.use(cookieParser());
+
+// Add this before your router
+app.get('/api/test-cors', (req, res) => {
+  res.json({ 
+    message: 'CORS is working!',
+    timestamp: new Date().toISOString(),
+    origin: req.headers.origin
+  });
+});
+
 app.use("/api", router);
 
 
