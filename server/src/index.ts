@@ -12,7 +12,10 @@ dotenv.config()
 const app = Express();
 const HOST = process.env.HOST as string;
 const HOST2 = process.env.HOST2 as string;
-const server = http.createServer(app);
+
+// Trust Vercel proxy - add this early
+app.set('trust proxy', 1);
+
 app.use(cors({
   origin: [
     HOST,
@@ -23,8 +26,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
 }));
 
-// Trust Vercel proxy - add this early
-app.set('trust proxy', 1);
 
 // Handle preflight requests explicitly
 app.options('*', (req, res) => {
@@ -35,30 +36,32 @@ app.options('*', (req, res) => {
   res.status(200).send();
 });
 
-const io = new Server(server, {
-    cors: {
-        origin: [HOST, HOST2],
-        credentials: true,
-        methods: ["GET", "POST"] 
-    }
-});
-const PORT = process.env.PORT;
-
-
 app.use(Express.json());
 app.use(Express.static('public'));
 app.use(cookieParser());
 
-// Add this before your router
-app.get('/api/test-cors', (req, res) => {
+// Test routes - ADD THESE
+app.get('/', (req, res) => {
   res.json({ 
-    message: 'CORS is working!',
-    timestamp: new Date().toISOString(),
-    origin: req.headers.origin
+    message: 'Backend server is running!',
+    timestamp: new Date().toISOString()
   });
 });
 
 app.use("/api", router);
+
+let io;
+if (process.env.NODE_ENV !== "production") {
+    const server = http.createServer(app);
+    const io = new Server(server, {
+        cors: {
+            origin: [HOST, HOST2],
+            credentials: true,
+            methods: ["GET", "POST"] 
+        }
+    });
+
+
 
 
 const connectedUsers = new Map(); // Map<socketId, User>
@@ -284,9 +287,11 @@ io.on("connection", socket => {
 
 
 
-
-
+// Only start server locally
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`app listening  at port : ${PORT}`);
 })
 
+}
+export default app;
