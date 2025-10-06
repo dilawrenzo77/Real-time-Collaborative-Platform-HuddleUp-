@@ -13,17 +13,6 @@ const app = Express();
 const HOST = process.env.HOST as string;
 const HOST2 = process.env.HOST2 as string;
 const server = http.createServer(app);
-const io = new Server(server, {
-    cors: {
-        origin: [HOST, HOST2],
-        credentials: true 
-    }
-});
-const PORT = process.env.PORT;
-
-
-app.use(Express.json());
-app.use(Express.static('public'));
 app.use(cors({
   origin: [
     HOST,
@@ -34,14 +23,32 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
 }));
 
+// Trust Vercel proxy - add this early
+app.set('trust proxy', 1);
+
+// Handle preflight requests explicitly
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Cookie, Set-Cookie, X-Requested-With');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.status(200).send();
+});
+
+const io = new Server(server, {
+    cors: {
+        origin: [HOST, HOST2],
+        credentials: true,
+        methods: ["GET", "POST"] 
+    }
+});
+const PORT = process.env.PORT;
+
+
+app.use(Express.json());
+app.use(Express.static('public'));
 app.use(cookieParser());
 app.use("/api", router);
-
-
-// Handle preflight requests
-app.options('*', cors());
-// Trust Vercel proxy
-app.set('trust proxy', 1);
 
 
 const connectedUsers = new Map(); // Map<socketId, User>
