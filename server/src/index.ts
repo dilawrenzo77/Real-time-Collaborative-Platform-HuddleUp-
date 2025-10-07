@@ -31,7 +31,7 @@ app.use(Express.static('public'));
 app.use(cookieParser());
 
 // Test route
-app.get('/', (req, res) => {
+app.get('/*splat', (req, res) => {
   res.json({ 
     message: 'Backend server with Socket.io is running!',
     timestamp: new Date().toISOString(),
@@ -284,7 +284,7 @@ io.on("connection", socket => {
 
 // Only start server locally
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`app listening  at port : ${PORT}`);
 })
 
