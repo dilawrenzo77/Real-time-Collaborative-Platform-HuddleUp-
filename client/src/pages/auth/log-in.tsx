@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     const { setUserData, setSocket } = useAuth();
-    const HOST = import.meta.env.VITE_URL;
-    const HOST2 = import.meta.env.VITE_VS_HOST;
+    const HOST = import.meta.env.VITE_URL as string;
+    const HOST2 = import.meta.env.VITE_VS_HOST as string;
     const [values, setValues] = useState({
         email: '',
         password: ''
