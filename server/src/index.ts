@@ -10,15 +10,15 @@ dotenv.config()
 
 
 const app = Express();
-const HOST = process.env.HOST as string;
-const HOST2 = process.env.HOST2 as string;
+const HOST = process.env.HOST || "https://real-time-collaborative-platform-hu-five.vercel.app";
+const HOST2 = process.env.HOST2 || https://real-time-collaborative-platform-hu.vercel.app;
 
 
 const server = http.createServer(app);
 
 
 app.use(cors({
-  origin: [HOST, HOST2].filter(Boolean),
+  origin: [HOST, HOST2],
   methods: ["GET", "POST", "OPTIONS"], // ✅ Includes OPTIONS
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
