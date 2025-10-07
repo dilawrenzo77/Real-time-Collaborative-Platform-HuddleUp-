@@ -13,63 +13,15 @@ const app = Express();
 const HOST = process.env.HOST as string;
 const HOST2 = process.env.HOST2 as string;
 
-const corsOptions = {
-  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
-    // Your existing HOST variables + dynamic patterns
-    const allowedOrigins = [
-      HOST,  // Your main frontend URL from env
-      HOST2, // Your backup URL from env
-      // Dynamic patterns for Vercel preview deployments
-      /https:\/\/real-time-collaborative-platform-huddle-up(-\w+)?\.vercel\.app$/,
-      /http:\/\/localhost:\d+$/
-    ].filter(Boolean); // Remove any undefined values
-    
-    // Allow requests with no origin
-    if (!origin) return callback(null, true);
-    
-    // Check if origin is in allowed list or matches patterns
-    const isAllowed = allowedOrigins.some(allowed => {
-      if (typeof allowed === 'string') {
-        return origin === allowed;
-      } else if (allowed instanceof RegExp) {
-        return allowed.test(origin);
-      }
-      return false;
-    });
-    
-    if (isAllowed) {
-      callback(null, true);
-    } else {
-      console.log('CORS blocked origin:', origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+
+app.use(cors({
+  origin: [HOST, HOST2].filter(Boolean),
+  methods: ["GET", "POST", "OPTIONS"], // ✅ Includes OPTIONS
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    'Content-Type', 
-    'Authorization', 
-    'Cookie', 
-    'Set-Cookie',
-    'X-Requested-With',
-    'Accept',
-    'Origin'
-  ]
-};
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
+}));
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-
-// app.use(cors({
-//   origin: [
-//     HOST,
-//     HOST2
-//   ],
-//   methods: ["GET", "POST"],
-//   credentials: true,
-//   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
-// }));
+app.options('*', cors()); // ✅ Explicitly handles OPTIONS preflight
 
 
 app.use(Express.json());
