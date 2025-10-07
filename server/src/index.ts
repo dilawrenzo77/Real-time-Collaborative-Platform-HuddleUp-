@@ -41,7 +41,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK' });
 })
 
-app.use("/api", router);
+// app.use("/api", router);
 
 
 const server = http.createServer(app);
