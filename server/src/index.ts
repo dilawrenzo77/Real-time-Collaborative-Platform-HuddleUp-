@@ -49,9 +49,28 @@ app.get('/', (req, res) => {
 
 app.get('/health', (req, res) => {
   res.json({ status: 'OK' });
-})
+});
 
-app.use("/api", router);
+// Add simple test API endpoints instead:
+app.post('/api/login', (req, res) => {
+  console.log('Login test endpoint hit');
+  res.json({ 
+    success: true, 
+    message: 'Login test endpoint working',
+    body: req.body 
+  });
+});
+
+app.post('/api/signup', (req, res) => {
+  console.log('Signup test endpoint hit');
+  res.json({ 
+    success: true, 
+    message: 'Signup test endpoint working',
+    body: req.body 
+  });
+});
+
+// app.use("/api", router);
 
 
 const io = new Server(server, {
