@@ -10,14 +10,8 @@ dotenv.config()
 
 
 const app = Express();
-const HOST = process.env.HOST || "https://real-time-collaborative-platform-huddle-up.vercel.app";;
+const HOST = process.env.HOST || "https://real-time-collaborative-platform-huddle-up.vercel.app";
 const HOST2 = process.env.HOST2 || "http://localhost:3000";
-
-
-// Validate that they exist
-// if (!HOST || !HOST2) {
-//   throw new Error('HOST and HOST2 environment variables are required');
-// }
 
 const server = http.createServer(app);
 
