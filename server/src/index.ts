@@ -45,7 +45,8 @@ app.use(cookieParser());
 
 
 
-app.use("/*api", router);
+app.use("/api", router);
+app.all('/{*any}', (req, res, next) => {})
 
 
 const io = new Server(server, {
