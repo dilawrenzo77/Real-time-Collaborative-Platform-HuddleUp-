@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
     const { setUserData, setSocket } = useAuth();
     const HOST = import.meta.env.VITE_URL;
+    const HOST2 = import.meta.env.VITE_VS_HOST;
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -32,7 +33,7 @@ const Login = () => {
                 const user = response?.data?.user;
                 const token = response?.data?.token;
                 setUserData({user, token});
-                setSocket(io("ws://localhost:3000"));
+                setSocket(io(HOST2));
 
                 setValues({
                     email: '',
