@@ -13,9 +13,6 @@ const app = Express();
 const HOST = process.env.HOST as string;
 const HOST2 = process.env.HOST2 as string;
 
-// Trust Vercel proxy - add this early
-app.set('trust proxy', 1);
-
 app.use(cors({
   origin: [
     HOST,
@@ -27,39 +24,34 @@ app.use(cors({
 }));
 
 
-// Handle preflight requests explicitly
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', req.headers.origin);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Cookie, Set-Cookie, X-Requested-With');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.status(200).send();
-});
-
 app.use(Express.json());
 app.use(Express.static('public'));
 app.use(cookieParser());
 
-// Test routes - ADD THESE
+// Test route
 app.get('/', (req, res) => {
   res.json({ 
-    message: 'Backend server is running!',
-    timestamp: new Date().toISOString()
+    message: 'Backend server with Socket.io is running!',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV
   });
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK' });
+})
+
 app.use("/api", router);
 
-let io;
-if (process.env.NODE_ENV !== "production") {
-    const server = http.createServer(app);
-    const io = new Server(server, {
-        cors: {
-            origin: [HOST, HOST2],
-            credentials: true,
-            methods: ["GET", "POST"] 
-        }
-    });
+
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: [HOST, HOST2],
+        credentials: true,
+        methods: ["GET", "POST"] 
+    }
+});
 
 
 
@@ -293,5 +285,5 @@ server.listen(PORT, () => {
     console.log(`app listening  at port : ${PORT}`);
 })
 
-}
+
 export default app;
