@@ -1,7 +1,7 @@
 import Express  from "express";
 import cookieParser from 'cookie-parser';
-import { Server } from "socket.io";
-import http from "http";
+// import { Server } from "socket.io";
+// import http from "http";
 import cors from "cors";
 import dotenv from "dotenv";
 // import router from "./routes/authRoutes";
@@ -13,7 +13,7 @@ const app = Express();
 const HOST = process.env.HOST || "https://real-time-collaborative-platform-huddle-up.vercel.app";
 const HOST2 = process.env.HOST2 || "http://localhost:3000";
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 
 app.use(cors({
@@ -48,13 +48,13 @@ app.get('/health', (req, res) => {
 // app.use("/api", router);
 
 
-const io = new Server(server, {
-    cors: {
-        origin: [HOST, HOST2],
-        credentials: true,
-        methods: ["GET", "POST"] 
-    }
-});
+// const io = new Server(server, {
+//     cors: {
+//         origin: [HOST, HOST2],
+//         credentials: true,
+//         methods: ["GET", "POST"] 
+//     }
+// });
 
 
 
