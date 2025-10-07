@@ -59,7 +59,7 @@ export const useAuth = (): AuthContextType => {
 };
 
 export const AuthContextProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const HOST = import.meta.env.VITE_VS_HOST;
+  const HOST = import.meta.env.VITE_URL;
   const [userData, setUserData] = useState<object | null>(null);
   const [connectedUsers, setConnectedUsers] = useState<User[]>([]);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
