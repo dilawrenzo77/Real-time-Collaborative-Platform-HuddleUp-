@@ -14,6 +14,9 @@ const HOST = process.env.HOST as string;
 const HOST2 = process.env.HOST2 as string;
 
 
+const server = http.createServer(app);
+
+
 app.use(cors({
   origin: [HOST, HOST2].filter(Boolean),
   methods: ["GET", "POST", "OPTIONS"], // ✅ Includes OPTIONS
@@ -41,10 +44,9 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK' });
 })
 
-// app.use("/api", router);
+app.use("/api", router);
 
 
-const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: [HOST, HOST2],
