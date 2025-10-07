@@ -31,7 +31,7 @@ app.use(Express.static('public'));
 app.use(cookieParser());
 
 // Test route
-app.get('/*splat', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ 
     message: 'Backend server with Socket.io is running!',
     timestamp: new Date().toISOString(),
