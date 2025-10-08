@@ -25,6 +25,12 @@ const Login = () => {
         
         setIsLoading(true); 
 
+         // ADD THESE DEBUG LINES
+    console.log('🔍 DEBUG - Environment Variables:');
+    console.log('VITE_URL:', import.meta.env.VITE_URL);
+    console.log('VITE_VS_HOST:', import.meta.env.VITE_VS_HOST);
+    console.log('Full login URL:', `${import.meta.env.VITE_URL}/api/login`);
+    console.log('Login data:', values);
 
         try {
             const response = await axios.post(`${HOST}/api/login`, values, { withCredentials: true});
