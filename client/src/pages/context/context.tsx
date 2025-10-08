@@ -1,7 +1,6 @@
 import {createContext, useState, useEffect, type ReactNode, useContext, useRef} from "react";
 import { io, Socket } from "socket.io-client";
 import { jwtDecode } from 'jwt-decode';
-import Cookies from "js-cookie";
 import axios from "axios";
 
 
@@ -73,7 +72,7 @@ export const AuthContextProvider: React.FC<AuthProviderProps> = ({ children }) =
   useEffect(() => {
     const getCookiesOnReload = async () => {
       try {
-        const userCookie = Cookies.get("userToken");
+        const userCookie = localStorage.getItem('userToken');
         console.log(userCookie, "cookies we retrieve from the broweser");
 
         if (userCookie) {

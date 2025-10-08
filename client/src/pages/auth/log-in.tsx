@@ -37,6 +37,8 @@ const Login = () => {
             if(response?.data.message === "Successfully Logged In "){
                 const user = response?.data?.user;
                 const token = response?.data?.token;
+                // Store in localStorage for persistence
+                localStorage.setItem('userToken', JSON.stringify(token));
                 setUserData({user, token});
                 setSocket(io(HOST2));
 
