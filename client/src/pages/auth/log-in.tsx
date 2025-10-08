@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from 'react';
 import { io } from "socket.io-client";
 import { useAuth } from "../context/context"; 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
@@ -15,6 +15,7 @@ const Login = () => {
     });
     const isFormValid = values.email.trim() !== '' && values.password.trim() !== '' ;
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
     
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -24,13 +25,6 @@ const Login = () => {
         if (!isFormValid || isLoading) return;
         
         setIsLoading(true); 
-
-         // ADD THESE DEBUG LINES
-        console.log('🔍 DEBUG - Environment Variables:');
-        console.log('VITE_URL:', import.meta.env.VITE_URL);
-        console.log('VITE_VS_HOST:', import.meta.env.VITE_VS_HOST);
-        console.log('Full login URL:', `${import.meta.env.VITE_URL}/api/login`);
-        console.log('Login data:', values);
 
         try {
             const response = await axios.post(`${HOST}/api/login`, values, { withCredentials: true});
@@ -50,7 +44,8 @@ const Login = () => {
                     email: '',
                     password: ''
                     });
-                window.location.href = "/dashboard";
+                // window.location.href = "/dashboard";
+                navigate("/dashboard");
             }
 
         } catch (error) {
