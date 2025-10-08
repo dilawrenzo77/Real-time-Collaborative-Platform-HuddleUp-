@@ -73,6 +73,11 @@ export const Login = async (request: Request, response: Response) => {
 
         response.cookie("userToken",userToken,{
             httpOnly: false,
+            secure: true,       // Required for HTTPS
+            sameSite: "none",   // Required for cross-origin
+            domain: ".onrender.com", // Or your specific domain
+            maxAge: 72 * 60 * 60 * 1000, // 72 hours
+            path: "/"           // Available on all paths
         });
 
         return response.status(200).json({

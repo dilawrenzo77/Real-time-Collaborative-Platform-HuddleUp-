@@ -71,9 +71,6 @@ app.get('/health', (req, res) => {
 
 app.use("/api", router);
 
-// app.all('/:any(*)', (req, res) => {
-//   res.status(404).json({ error: 'Route not found' });
-// });
 
 
 // const io = new Server(server, {
