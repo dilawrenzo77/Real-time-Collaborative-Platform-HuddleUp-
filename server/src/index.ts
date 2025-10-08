@@ -76,14 +76,33 @@ app.use("/api", router);
 // });
 
 
+// const io = new Server(server, {
+//     cors: {
+//         origin: [HOST, HOST2],
+//         credentials: true,
+//         methods: ["GET", "POST"] 
+//     }
+// });
 const io = new Server(server, {
     cors: {
-        origin: [HOST, HOST2],
+        origin: function (origin, callback) {
+            const allowedOrigins = [
+                "https://real-time-collaborative-platform-hu-five.vercel.app",
+                "https://real-time-collaborative-platform-huddleup.onrender.com", 
+                "http://localhost:3000",
+                "http://localhost:3001"
+            ];
+            
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
         credentials: true,
-        methods: ["GET", "POST"] 
+        methods: ["GET", "POST"]
     }
 });
-
 
 
 
