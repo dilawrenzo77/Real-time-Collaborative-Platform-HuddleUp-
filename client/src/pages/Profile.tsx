@@ -18,12 +18,13 @@ export interface UserData {
 const Profile = () => {
   const { userData } = useAuth();
   const [userProfile, setUserProfile] = useState<object | null>(null);
+  const HOST = process.env.VITE_URL;
 
 useEffect(() => {
   const getUser = async () => {
     try {
       // ✅ Use http (not https) for localhost
-      const response = await axios.post("http://localhost:3000/api/profile", {
+      const response = await axios.post(`${HOST}}/api/profile`, {
         userEmail: (userData as UserData).email
       });
       
@@ -59,7 +60,7 @@ useEffect(() => {
       </div>
       <div className=" flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-20">
         <div>
-          <img src="../../public/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-30 h-30 border-2 border-purple-300"/>
+          <img src="/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-30 h-30 border-2 border-purple-300"/>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center sm:items-center sm:justify-between w-2xl">
           <div className="space-y-6">

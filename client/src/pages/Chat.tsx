@@ -19,14 +19,6 @@ interface UserData {
   id?: string;
   name?: string;
 }
-// interface User {
-//   name: string;
-//   socketId: string | undefined;
-//   nickName: string;
-//   role: string;
-//   isOnline: boolean;
-//   lastSeen?: Date;
-// }
 
 
 
@@ -287,7 +279,7 @@ useEffect(() => {
       <div className="bg-black/20 backdrop-blur-lg w-[100vw] grow h-[90%] space-y-2 mr-2 px-1 rounded-sm mx-auto">
         <div className="w-full flex justify-between items-center gap-4 mt-1.5 md:mt-2 lg:mt-3 px-1">
           <div className="flex items-center justify-center gap-2">
-            <img src="../../public/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-6 h-6 border-2 border-black"/>
+            <img src="/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-6 h-6 border-2 border-black"/>
             <p className="text-sm lg:text-md bg-neutral-200/50 p-1 lg:p-2.5 lg:px-3 rounded-md">Hi, <span className="font-semibold md:text-lg lg:text-xl">{(userData as UserData).nickName}</span></p>
           </div>
           <Link to="/profile">

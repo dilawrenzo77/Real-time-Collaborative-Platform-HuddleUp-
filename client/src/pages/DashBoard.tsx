@@ -63,7 +63,7 @@ const DashBoard = () => {
                 </Link>
                 <Link to="/profile">
                     <div className="invisible sm:visible flex items-center justify-center gap-2 hover:scale-90 transition-all duration-500">
-                        <img src="../../public/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-6 h-6 border-2 border-black"/>
+                        <img src="/concept-portrait-overstimulated-person.jpg" alt="avatarImage" className="object-cover rounded-full w-6 h-6 border-2 border-black"/>
                         <p className="text-[0.5rem] bg-neutral-800/30 backdrop-blur-lg px-3 py-1 rounded-lg">Welcome, &nbsp;<span className="font-semibold text-sm">{(userData as UserData).nickName}</span></p>
                     </div>
                 </Link>
