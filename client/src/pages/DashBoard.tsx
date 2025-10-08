@@ -26,6 +26,9 @@ const DashBoard = () => {
         return <div>Not authenticated</div>;
     }
     
+    // Safe access with type assertion
+    const userRole = (userData as UserData).role;
+    
 
     return (
         <section className="w-full min-h-screen  flex flex-col items-center justify-start gap-3">
@@ -85,7 +88,7 @@ const DashBoard = () => {
                 </div>
                 <div className="space-y-2 w-full"></div>
                 <div className="space-y-2 w-full">
-                    {((userData as UserData).role === "FrontEnd") ?  
+                    {(userRole === "FrontEnd") ?  
                         <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
@@ -159,7 +162,7 @@ const DashBoard = () => {
 
                     {/* --------- */}
 
-                    {((userData as UserData)?.role === "BackEnd") ?  
+                    {(userRole === "BackEnd") ?  
                         <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                             <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
@@ -231,7 +234,7 @@ const DashBoard = () => {
 
                         {/* -------- */}
 
-                    {((userData as UserData)?.role === "UI Design") ?  
+                    {(userRole === "UI Design") ?  
                         <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
@@ -302,7 +305,7 @@ const DashBoard = () => {
 
                     {/* -------- */}
 
-                    {((userData as UserData)?.role === "DevOps") ?  
+                    {(userRole === "DevOps") ?  
                         <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
