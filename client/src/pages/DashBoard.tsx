@@ -11,6 +11,7 @@ interface UserData {
 
 const DashBoard = () => {
     const { userData, socket, isLoading } = useAuth();
+    console.log(userData, "we need to revisit the coe structure");
     
     const handleClick = (room: string) => {
         socket?.emit("JoinChat", room);
