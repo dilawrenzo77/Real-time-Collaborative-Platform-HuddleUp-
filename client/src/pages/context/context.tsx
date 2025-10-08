@@ -74,9 +74,11 @@ export const AuthContextProvider: React.FC<AuthProviderProps> = ({ children }) =
     const getCookiesOnReload = async () => {
       try {
         const userCookie = Cookies.get("userToken");
+        console.log(userCookie, "cookies we retrieve from the broweser");
 
         if (userCookie) {
         const decoded = jwtDecode(userCookie);
+        console.log("🔍 Context - decoded:", decoded);
         setUserData(decoded);
 
         // Create socket only if it doesn't exist

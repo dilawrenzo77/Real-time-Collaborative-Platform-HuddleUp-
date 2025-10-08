@@ -10,11 +10,20 @@ interface UserData {
 }
 
 const DashBoard = () => {
-    const { userData, socket } = useAuth();
+    const { userData, socket, isLoading } = useAuth();
     
     const handleClick = (room: string) => {
         socket?.emit("JoinChat", room);
     };
+    
+    // Add safety checks
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+    
+    if (!userData) {
+        return <div>Not authenticated</div>;
+    }
     
 
     return (
