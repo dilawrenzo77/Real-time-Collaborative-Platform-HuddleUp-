@@ -15,7 +15,7 @@ const Home  = () => {
         </div>
         <div className="flex items-center justify-center gap-3 flex-wrap">
           <Link to="/about">
-          <div className="bg-black flex items-center justify-between gap-4 rounded-full px-5 py-1 group hover:bg-white transition-all duration-500 hover:scale-105 cursor-pointer">
+          <div className="bg-black hidden sm:flex-row items-center justify-between gap-4 rounded-full px-5 py-1 md:py-3 group hover:bg-white transition-all duration-500 hover:scale-105 cursor-pointer">
             <p className="text-white text-[0.6rem] group-hover:text-black transition-all duration-500">About Us</p>
             <div className="bg-white rounded-full p-0.5 ">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@ const Home  = () => {
           </div>
           </Link>
           <Link to="/contacts">
-          <div className="bg-black flex items-center justify-between gap-4 rounded-full px-5 py-1 group hover:bg-white transition-all duration-500 hover:scale-105 cursor-pointer">
+          <div className="bg-black flex items-center justify-between gap-4 rounded-full px-5 py-1 md:py-3 group hover:bg-white transition-all duration-500 hover:scale-105 cursor-pointer">
             <p className="text-white text-[0.6rem] group-hover:text-black transition-all duration-500">Contact</p>
             <div className="bg-white rounded-full p-0.5">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,8 +40,8 @@ const Home  = () => {
       <div className="grow flex flex-col items-center justify-center gap-2 px-2">
          <div className="flex flex-col items-center justify-center gap-5">
           <p className="text-xl tracking-widest text-center">Welcome to <span className="text-2xl font-semibold tracking-widest text-center"> Huddle Up </span></p>
-          <p className="text-lg text-center tracking-widest">Your Shortcut to Communicate in Perfect Sync</p>
-          <p className="text-sm lg:text-md text-center tracking-widest">Huddle unites development and design teams in real-time. Collaborate on code, visuals, and feedback in one place to ship better products.</p>
+          <p className="text-lg text-center tracking-widest text-wrap">Your Shortcut to Communicate in Perfect Sync</p>
+          <p className="text-sm lg:text-md text-center tracking-widest text-wrap">Huddle unites development and design teams in real-time. Collaborate on code, visuals, and feedback in one place to ship better products.</p>
           <p></p>
          </div>
           <div className="flex flex-col items-center justify-start gap-4 sm:flex-row sm:items-center sm:justify-center">

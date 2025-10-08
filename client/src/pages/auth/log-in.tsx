@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from 'react';
 import { io } from "socket.io-client";
 import { useAuth } from "../context/context"; 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
     });
     const isFormValid = values.email.trim() !== '' && values.password.trim() !== '' ;
     const [isLoading, setIsLoading] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -29,10 +29,10 @@ const Login = () => {
         try {
             const response = await axios.post(`${HOST}/api/login`, values, { withCredentials: true});
 
-            console.log('✅ API Response received:', response);
-            console.log('📄 Response data:', response.data);
-            console.log('🔑 Token received:', response.data.token);
-            console.log('👤 User data:', response.data.user);
+            // console.log('✅ API Response received:', response);
+            // console.log('📄 Response data:', response.data);
+            // console.log('🔑 Token received:', response.data.token);
+            // console.log('👤 User data:', response.data.user);
 
             if(response?.data.message === "Successfully Logged In "){
                 const user = response?.data?.user;
@@ -46,8 +46,8 @@ const Login = () => {
                     email: '',
                     password: ''
                     });
-                // window.location.href = "/dashboard";
-                navigate("/dashboard");
+                window.location.href = "/dashboard";
+                //navigate("/dashboard");
             }
 
         } catch (error) {
@@ -88,7 +88,7 @@ const Login = () => {
                         <input type="password" disabled={isLoading} autoComplete="off" name="password" value={values.password} required onChange={(e) => setValues({...values, password: e.target.value})} className="text-sm md:text-md lg:text-lg border-1 border-neutral-900/40 rounded-full w-full py-1 sm:py-1.5 md:py-2 lg:py-2 px-1 appearance-none outline-none bg-transparent"/>
                     </div>
 
-                    {!isFormValid ? <button type="submit" disabled={!isFormValid} className="bg-neutral-400 rounded-full text-neutral-500 w-full py-0.5 sm:py-2 lg:py-3 text-lg lg:text-4xl font-bold cursor-pointer hover:scale-110 transition-all duration-300">Log In</button> : <button type="submit"  disabled={!isFormValid || isLoading} className="bg-neutral-800 text-white rounded-full w-full py-0.5 text-lg font-semibold cursor-pointer hover:scale-110 transition-all duration-300">{getButtonContent()}</button>}
+                    {!isFormValid ? <button type="submit" disabled={!isFormValid} className="bg-neutral-400 rounded-full text-neutral-500 w-full py-1 sm:py-2 lg:py-3 text-lg lg:text-4xl font-bold cursor-pointer hover:scale-110 transition-all duration-300">Log In</button> : <button type="submit"  disabled={!isFormValid || isLoading} className="bg-neutral-800 text-white rounded-full w-full py-1 sm:py-2 lg:py-3  text-lg font-semibold cursor-pointer hover:scale-110 transition-all duration-300">{getButtonContent()}</button>}
                 </form>
                 <div className="flex items-center justify-center">
                     <p className="text-xs md:text-md lg:text-lg">Not on HuddleUp? 
