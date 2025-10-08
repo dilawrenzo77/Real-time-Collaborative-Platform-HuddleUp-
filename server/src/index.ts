@@ -16,14 +16,38 @@ const HOST2 = process.env.HOST2 || "http://localhost:3000";
 const server = http.createServer(app);
 
 
+// app.use(cors({
+//   origin: [HOST, HOST2],
+//   methods: ["GET", "POST", "OPTIONS"], // ✅ Includes OPTIONS
+//   credentials: true,
+//   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
+// }));
 app.use(cors({
-  origin: [HOST, HOST2],
-  methods: ["GET", "POST", "OPTIONS"], // ✅ Includes OPTIONS
+  origin: function (origin, callback) {
+    // Allow all Vercel deployments and localhost
+    const allowedOrigins = [
+      "https://real-time-collaborative-platform-hu-five.vercel.app",
+      "https://real-time-collaborative-platform-huddleup.onrender.com", 
+      "http://localhost:3000",
+      "http://localhost:3001"
+    ];
+    
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log('CORS blocked origin:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With']
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie', 'Set-Cookie','X-Requested-With' ]
 }));
 
-app.options('*', cors()); // ✅ Explicitly handles OPTIONS preflight
+app.options('*', cors()); // Handle preflight requests
 
 
 app.use(Express.json());
