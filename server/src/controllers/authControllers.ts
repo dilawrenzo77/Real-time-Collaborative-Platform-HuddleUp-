@@ -75,6 +75,7 @@ export const Login = async (request: Request, response: Response) => {
             httpOnly: false,
             secure: true,       // Required for HTTPS
             sameSite: "none",   // Required for cross-origin
+            domain: "https://real-time-collaborative-platform-hu-five.vercel.app", // Or your specific domain
             maxAge: 72 * 60 * 60 * 1000, // 72 hours
             path: "/"           // Available on all paths
         });
