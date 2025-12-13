@@ -89,7 +89,7 @@ const DashBoard = () => {
                 <div className="space-y-2 w-full"></div>
                 <div className="space-y-2 w-full">
                     {(userRole === "FrontEnd") ?  
-                        <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
@@ -163,7 +163,7 @@ const DashBoard = () => {
                     {/* --------- */}
 
                     {(userRole === "BackEnd") ?  
-                        <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                             <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
@@ -235,7 +235,7 @@ const DashBoard = () => {
                         {/* -------- */}
 
                     {(userRole === "UI Design") ?  
-                        <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg text-white">General/Team</p>
@@ -306,7 +306,7 @@ const DashBoard = () => {
                     {/* -------- */}
 
                     {(userRole === "DevOps") ?  
-                        <div className="w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-6 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-6 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>

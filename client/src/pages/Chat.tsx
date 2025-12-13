@@ -289,7 +289,7 @@ useEffect(() => {
           </Link>
         </div>
         <div className="flex flex-col items-center justify-start gap-2">
-          <div  ref={scrollRef}  className="bg-gray-100 rounded-sm w-full flex flex-col items-start justify-start gap-1 px-0.5 py-1 overflow-y-scroll hide-scrollbar h-[65vh]">
+          <div  ref={scrollRef}  className="bg-gray-100 rounded-sm w-full flex flex-col items-start justify-start gap-1 px-0.5 py-1 overflow-y-scroll hide-scrollbar h-[20vh] md:h-[65vh] ">
             {notification.map((note, index) => (
               <div key={note.id || index} className={`rounded-full px-5 py-1 mb-2 transition-all duration-300 ${note.type === 'you-left' ? 'bg-red-400/80' : 'bg-amber-400/50'}`}>
                 <p className="text-neutral-800 text-xs italic text-center">
