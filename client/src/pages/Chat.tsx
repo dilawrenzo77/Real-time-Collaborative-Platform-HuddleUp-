@@ -218,7 +218,7 @@ useEffect(() => {
 
   return (
     <section className="flex flex-col items-center justify-start gap-2 h-[100vh] sm:flex-row">
-      <div className="bg-black/20 backdrop-blur-lg px-2 py-1 w-full sm:w-55 mx-auto h-[90vh] sm:ml-2 flex flex-col items-center justify-start gap-1 sm:gap-4 rounded-sm">
+      <div className="bg-black/20 backdrop-blur-lg px-2 py-2 w-full sm:w-55 mx-auto h-fit sm:ml-2 flex flex-col items-center justify-start gap-1 sm:gap-4 rounded-sm">
         <div className="mx-auto">
           <p className="text-xl font-semibold gradient-text">Huddle Up</p>
         </div>
