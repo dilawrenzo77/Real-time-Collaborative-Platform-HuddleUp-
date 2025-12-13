@@ -68,9 +68,9 @@ const DashBoard = () => {
                     </div>
                 </Link>
             </div>
-            <div className="flex flex-col items-center justify-start gap-1 lg:gap-7 px-2">
+            <div className="flex flex-col items-center justify-start gap-1 lg:gap-7 px-2 sm:px-1">
                 <p className="text-2xl text-center font-semibold">Collaborative Forum</p>
-                <p className="text-sm md:text-lg text-center text-neutral-950/80 text-wrap">Select and join your preferred forum that fits your work description</p>
+                <p className="text-xs md:text-lg text-center text-neutral-950/80 text-wrap">Select and join your preferred forum that fits your work description</p>
                 <div className="flex flex-col items-center justify-center gap-1">
                     <p className="text-[0.6rem] md:text-sm text-center w-[25rem] text-neutral-950/60 text-wrap">some forums are restricted to fit your role and keep privacy in rooms that are not compatible to your said role</p>
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@ const DashBoard = () => {
                 <div className="space-y-2 w-full"></div>
                 <div className="space-y-2 w-full">
                     {(userRole === "FrontEnd") ?  
-                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-4 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
@@ -163,7 +163,7 @@ const DashBoard = () => {
                     {/* --------- */}
 
                     {(userRole === "BackEnd") ?  
-                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-4 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                             <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
@@ -235,7 +235,7 @@ const DashBoard = () => {
                         {/* -------- */}
 
                     {(userRole === "UI Design") ?  
-                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-4 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg text-white">General/Team</p>
@@ -306,7 +306,7 @@ const DashBoard = () => {
                     {/* -------- */}
 
                     {(userRole === "DevOps") ?  
-                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-4 mx-auto">
+                        <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
                                 <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
