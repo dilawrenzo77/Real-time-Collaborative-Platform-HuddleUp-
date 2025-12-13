@@ -255,7 +255,7 @@ useEffect(() => {
           </div>
           </Link>
         </div>
-        <div className="flex sm:flex-col items-center sm:items-start justify-start gap-3 w-full bg-neutral-500/70 p-1 rounded-sm grow overflow-y-scroll hide-scrollbar h-fit">
+        <div className="flex sm:flex-col items-center sm:items-start justify-start gap-3 w-full bg-neutral-500/70 p-1 rounded-sm overflow-y-scroll hide-scrollbar h-fit">
           <span className="font-semibold text-md">{roomId}:  <span className="font-semibold text-green-700">{currentRoomUsers.length}</span></span>
           {currentRoomUsers.length === 0 ? <p className="text-sm capitalize font-semibold text-black/50 text-center mx-auto">No user in the group</p> : currentRoomUsers.map((user, i) => <UserTab  key={i} data={user}/> )}
         </div>

@@ -72,7 +72,7 @@ const DashBoard = () => {
                 <p className="text-2xl text-center font-semibold">Collaborative Forum</p>
                 <p className="text-xs md:text-lg text-center text-neutral-950/80 text-wrap">Select and join your preferred forum that fits your work description</p>
                 <div className="flex flex-col items-center justify-center gap-1">
-                    <p className="text-[0.6rem] md:text-sm text-center w-[25rem] text-neutral-950/60 text-wrap">some forums are restricted to fit your role and keep privacy in rooms that are not compatible to your said role</p>
+                    <p className="text-[0.5rem] md:text-sm text-center w-[25rem] text-neutral-950/60 text-wrap">some forums are restricted to fit your role and keep privacy in rooms that are not compatible to your said role</p>
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.4">
                         <path d="M6.01001 4.75C5.5958 4.75 5.26001 5.08579 5.26001 5.5V7.125C5.26001 7.53921 4.92422 7.875 4.51001 7.875C4.0958 7.875 3.76001 7.53921 3.76001 7.125V5.5C3.76001 4.25736 4.76737 3.25 6.01001 3.25H7.63501C8.04922 3.25 8.38501 3.58579 8.38501 4C8.38501 4.41421 8.04922 4.75 7.63501 4.75H6.01001Z" fill="#323544"/>
@@ -91,7 +91,7 @@ const DashBoard = () => {
                     {(userRole === "FrontEnd") ?  
                         <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="1" d="M2.50002 12.0957C2.50002 6.849 6.75332 2.5957 12 2.5957C17.2467 2.5957 21.5 6.849 21.5 12.0957C21.5 17.3424 17.2467 21.5957 12 21.5957H3.25002C2.94668 21.5957 2.6732 21.413 2.55711 21.1327C2.44103 20.8525 2.50519 20.5299 2.71969 20.3154L4.77303 18.262C3.35633 16.603 2.50002 14.4488 2.50002 12.0957ZM12 4.0957C7.58174 4.0957 4.00002 7.67742 4.00002 12.0957C4.00002 14.305 4.89463 16.304 6.34317 17.7526C6.48382 17.8932 6.56284 18.084 6.56284 18.2829C6.56284 18.4818 6.48382 18.6726 6.34317 18.8132L5.06068 20.0957H12C16.4183 20.0957 20 16.514 20 12.0957C20 7.67742 16.4183 4.0957 12 4.0957Z" fill="#323544"/>
@@ -102,7 +102,7 @@ const DashBoard = () => {
                                 </Link>
 
                                 <Link to="/chat/frontEnd" onClick={() => handleClick("FrontEnd")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">FrontEnd</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.09429 7.20447C8.53365 7.64379 8.53368 8.3561 8.09436 8.79546L4.88978 12.0003L8.09432 15.2049C8.53366 15.6442 8.53366 16.3565 8.09432 16.7959C7.65498 17.2352 6.94267 17.2352 6.50333 16.7959L2.50333 12.7959C2.06401 12.3565 2.06399 11.6443 2.5033 11.2049L6.5033 7.20454C6.94262 6.76518 7.65493 6.76515 8.09429 7.20447ZM17.0034 7.20447C17.4427 6.76515 18.155 6.76518 18.5944 7.20454L22.5944 11.2049C23.0337 11.6443 23.0336 12.3565 22.5943 12.7959L18.5943 16.7959C18.155 17.2352 17.4427 17.2352 17.0033 16.7959C16.564 16.3565 16.564 15.6442 17.0033 15.2049L20.2079 12.0003L17.0033 8.79546C16.564 8.3561 16.564 7.64379 17.0034 7.20447Z" fill="#323544"/>
@@ -111,7 +111,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">Backend</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21.8377 11.6774L12.2893 2.09677C12.1603 1.96774 11.8377 1.96774 11.6442 2.09677L8.999 4.74194L11.4506 7.19355C11.6442 7.09677 11.87 7.06452 12.0958 7.06452C12.999 7.06452 13.6764 7.80645 13.6764 8.64516C13.6764 8.87097 13.6442 9.09677 13.5474 9.29032L15.5151 11.2581C15.7087 11.1613 15.9345 11.129 16.1603 11.129C17.0635 11.129 17.7409 11.871 17.7409 12.7097C17.7409 13.6129 16.999 14.2903 16.1603 14.2903C15.2571 14.2903 14.5797 13.5484 14.5797 12.7097C14.5797 12.4839 14.6119 12.2581 14.7087 12.0645L12.7409 10.0968H12.7087V13.8065C13.2893 14.0645 13.7087 14.6129 13.7087 15.2903C13.7087 16.1935 12.9667 16.871 12.128 16.871C11.2248 16.871 10.5474 16.129 10.5474 15.2903C10.5474 14.6129 10.9667 14.0323 11.5474 13.8065V10.1935C10.9667 9.93548 10.5474 9.3871 10.5474 8.70968C10.5474 8.48387 10.5797 8.25806 10.6764 8.06452L8.22481 5.6129L2.12802 11.6774C1.99899 11.8065 1.99899 12.129 2.12802 12.3226L11.7087 21.9032C11.8377 22.0323 12.1603 22.0323 12.3538 21.9032L21.9022 12.3226C21.999 12.129 21.999 11.871 21.8377 11.6774Z" fill="#323544"/>
@@ -120,7 +120,7 @@ const DashBoard = () => {
 
 
                                 <Link to="/chat/design" onClick={() => handleClick("UI Design")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">UI Design</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 12.7351 21.3922 13.2734 20.7117 13.2734H17.0138C15.3547 13.2734 14.0098 14.6184 14.0098 16.2775C14.0098 17.0726 14.325 17.8353 14.8864 18.3984C15.4257 18.9393 15.6251 19.6836 15.4766 20.3542C15.3242 21.042 14.8035 21.6373 13.993 21.8012C13.3483 21.9317 12.6818 22 12 22C6.47715 22 2 17.5228 2 12ZM10.5723 7.9375C11.2626 7.9375 11.8223 7.37786 11.8223 6.6875C11.8223 5.99714 11.2626 5.4375 10.5723 5.4375C9.88191 5.4375 9.32227 5.99714 9.32227 6.6875C9.32227 7.37786 9.88191 7.9375 10.5723 7.9375ZM15.8965 9.34863C16.5868 9.34863 17.1465 8.78899 17.1465 8.09863C17.1465 7.40828 16.5868 6.84863 15.8965 6.84863C15.2061 6.84863 14.6465 7.40828 14.6465 8.09863C14.6465 8.78899 15.2061 9.34863 15.8965 9.34863ZM7.93555 10.5986C7.93555 9.90828 7.3759 9.34863 6.68555 9.34863C5.99519 9.34863 5.43555 9.90828 5.43555 10.5986C5.43555 11.289 5.99519 11.8486 6.68555 11.8486C7.3759 11.8486 7.93555 11.289 7.93555 10.5986ZM8.11523 17.1461C8.80559 17.1461 9.36523 16.5864 9.36523 15.8961C9.36523 15.2057 8.80559 14.6461 8.11523 14.6461C7.42488 14.6461 6.86523 15.2057 6.86523 15.8961C6.86523 16.5864 7.42488 17.1461 8.11523 17.1461Z" fill="#323544"/>
@@ -128,7 +128,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">DevOps</p>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g opacity="0.4">
@@ -147,7 +147,7 @@ const DashBoard = () => {
 
 
                                 <Link to="/chat/tools" onClick={() => handleClick("Tools")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Tools</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4" d="M11.1385 2.29633C11.6899 2.06789 12.3094 2.06789 12.8608 2.29633L19.409 5.00923C20.1849 5.33068 20.7473 6.07313 20.7701 6.95597C20.8871 11.5013 19.4296 17.7631 13.067 21.5139C12.4101 21.9012 11.5955 21.9047 10.9353 21.5237C4.43153 17.7707 3.09402 11.4935 3.22752 6.95318C3.2534 6.07287 3.81392 5.33089 4.59034 5.00922L11.1385 2.29633ZM15.507 8.71521C15.2141 8.42231 14.7393 8.42231 14.4464 8.71521L10.9648 12.1967L9.55353 10.7854C9.26063 10.4925 8.78576 10.4926 8.49287 10.7854C8.19998 11.0783 8.19998 11.5532 8.49287 11.8461L10.4345 13.7877C10.7274 14.0806 11.2023 14.0806 11.4952 13.7877L15.507 9.77587C15.7999 9.48297 15.7999 9.0081 15.507 8.71521Z" fill="#323544"/>
@@ -165,7 +165,7 @@ const DashBoard = () => {
                     {(userRole === "BackEnd") ?  
                         <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                             <Link to="/chat/general" onClick={() => handleClick("General")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="1" d="M2.50002 12.0957C2.50002 6.849 6.75332 2.5957 12 2.5957C17.2467 2.5957 21.5 6.849 21.5 12.0957C21.5 17.3424 17.2467 21.5957 12 21.5957H3.25002C2.94668 21.5957 2.6732 21.413 2.55711 21.1327C2.44103 20.8525 2.50519 20.5299 2.71969 20.3154L4.77303 18.262C3.35633 16.603 2.50002 14.4488 2.50002 12.0957ZM12 4.0957C7.58174 4.0957 4.00002 7.67742 4.00002 12.0957C4.00002 14.305 4.89463 16.304 6.34317 17.7526C6.48382 17.8932 6.56284 18.084 6.56284 18.2829C6.56284 18.4818 6.48382 18.6726 6.34317 18.8132L5.06068 20.0957H12C16.4183 20.0957 20 16.514 20 12.0957C20 7.67742 16.4183 4.0957 12 4.0957Z" fill="#323544"/>
@@ -176,7 +176,7 @@ const DashBoard = () => {
                                 </Link>
 
                                 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">FrontEnd</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.09429 7.20447C8.53365 7.64379 8.53368 8.3561 8.09436 8.79546L4.88978 12.0003L8.09432 15.2049C8.53366 15.6442 8.53366 16.3565 8.09432 16.7959C7.65498 17.2352 6.94267 17.2352 6.50333 16.7959L2.50333 12.7959C2.06401 12.3565 2.06399 11.6443 2.5033 11.2049L6.5033 7.20454C6.94262 6.76518 7.65493 6.76515 8.09429 7.20447ZM17.0034 7.20447C17.4427 6.76515 18.155 6.76518 18.5944 7.20454L22.5944 11.2049C23.0337 11.6443 23.0336 12.3565 22.5943 12.7959L18.5943 16.7959C18.155 17.2352 17.4427 17.2352 17.0033 16.7959C16.564 16.3565 16.564 15.6442 17.0033 15.2049L20.2079 12.0003L17.0033 8.79546C16.564 8.3561 16.564 7.64379 17.0034 7.20447Z" fill="#323544"/>
@@ -186,7 +186,7 @@ const DashBoard = () => {
                                 
 
                                 <Link to="/chat/backEnd" onClick={() => handleClick("Backend")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Backend</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21.8377 11.6774L12.2893 2.09677C12.1603 1.96774 11.8377 1.96774 11.6442 2.09677L8.999 4.74194L11.4506 7.19355C11.6442 7.09677 11.87 7.06452 12.0958 7.06452C12.999 7.06452 13.6764 7.80645 13.6764 8.64516C13.6764 8.87097 13.6442 9.09677 13.5474 9.29032L15.5151 11.2581C15.7087 11.1613 15.9345 11.129 16.1603 11.129C17.0635 11.129 17.7409 11.871 17.7409 12.7097C17.7409 13.6129 16.999 14.2903 16.1603 14.2903C15.2571 14.2903 14.5797 13.5484 14.5797 12.7097C14.5797 12.4839 14.6119 12.2581 14.7087 12.0645L12.7409 10.0968H12.7087V13.8065C13.2893 14.0645 13.7087 14.6129 13.7087 15.2903C13.7087 16.1935 12.9667 16.871 12.128 16.871C11.2248 16.871 10.5474 16.129 10.5474 15.2903C10.5474 14.6129 10.9667 14.0323 11.5474 13.8065V10.1935C10.9667 9.93548 10.5474 9.3871 10.5474 8.70968C10.5474 8.48387 10.5797 8.25806 10.6764 8.06452L8.22481 5.6129L2.12802 11.6774C1.99899 11.8065 1.99899 12.129 2.12802 12.3226L11.7087 21.9032C11.8377 22.0323 12.1603 22.0323 12.3538 21.9032L21.9022 12.3226C21.999 12.129 21.999 11.871 21.8377 11.6774Z" fill="#323544"/>
@@ -194,14 +194,14 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">UI Design</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 12.7351 21.3922 13.2734 20.7117 13.2734H17.0138C15.3547 13.2734 14.0098 14.6184 14.0098 16.2775C14.0098 17.0726 14.325 17.8353 14.8864 18.3984C15.4257 18.9393 15.6251 19.6836 15.4766 20.3542C15.3242 21.042 14.8035 21.6373 13.993 21.8012C13.3483 21.9317 12.6818 22 12 22C6.47715 22 2 17.5228 2 12ZM10.5723 7.9375C11.2626 7.9375 11.8223 7.37786 11.8223 6.6875C11.8223 5.99714 11.2626 5.4375 10.5723 5.4375C9.88191 5.4375 9.32227 5.99714 9.32227 6.6875C9.32227 7.37786 9.88191 7.9375 10.5723 7.9375ZM15.8965 9.34863C16.5868 9.34863 17.1465 8.78899 17.1465 8.09863C17.1465 7.40828 16.5868 6.84863 15.8965 6.84863C15.2061 6.84863 14.6465 7.40828 14.6465 8.09863C14.6465 8.78899 15.2061 9.34863 15.8965 9.34863ZM7.93555 10.5986C7.93555 9.90828 7.3759 9.34863 6.68555 9.34863C5.99519 9.34863 5.43555 9.90828 5.43555 10.5986C5.43555 11.289 5.99519 11.8486 6.68555 11.8486C7.3759 11.8486 7.93555 11.289 7.93555 10.5986ZM8.11523 17.1461C8.80559 17.1461 9.36523 16.5864 9.36523 15.8961C9.36523 15.2057 8.80559 14.6461 8.11523 14.6461C7.42488 14.6461 6.86523 15.2057 6.86523 15.8961C6.86523 16.5864 7.42488 17.1461 8.11523 17.1461Z" fill="#323544"/>
                                     </svg>
                                 </div>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">DevOps</p>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g opacity="0.4">
@@ -219,7 +219,7 @@ const DashBoard = () => {
                                 </div>
 
                                 <Link to="/chat/tools" onClick={() => handleClick("Tools")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Tools</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4" d="M11.1385 2.29633C11.6899 2.06789 12.3094 2.06789 12.8608 2.29633L19.409 5.00923C20.1849 5.33068 20.7473 6.07313 20.7701 6.95597C20.8871 11.5013 19.4296 17.7631 13.067 21.5139C12.4101 21.9012 11.5955 21.9047 10.9353 21.5237C4.43153 17.7707 3.09402 11.4935 3.22752 6.95318C3.2534 6.07287 3.81392 5.33089 4.59034 5.00922L11.1385 2.29633ZM15.507 8.71521C15.2141 8.42231 14.7393 8.42231 14.4464 8.71521L10.9648 12.1967L9.55353 10.7854C9.26063 10.4925 8.78576 10.4926 8.49287 10.7854C8.19998 11.0783 8.19998 11.5532 8.49287 11.8461L10.4345 13.7877C10.7274 14.0806 11.2023 14.0806 11.4952 13.7877L15.507 9.77587C15.7999 9.48297 15.7999 9.0081 15.507 8.71521Z" fill="#ffffff"/>
@@ -237,7 +237,7 @@ const DashBoard = () => {
                     {(userRole === "UI Design") ?  
                         <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg text-white">General/Team</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="1" d="M2.50002 12.0957C2.50002 6.849 6.75332 2.5957 12 2.5957C17.2467 2.5957 21.5 6.849 21.5 12.0957C21.5 17.3424 17.2467 21.5957 12 21.5957H3.25002C2.94668 21.5957 2.6732 21.413 2.55711 21.1327C2.44103 20.8525 2.50519 20.5299 2.71969 20.3154L4.77303 18.262C3.35633 16.603 2.50002 14.4488 2.50002 12.0957ZM12 4.0957C7.58174 4.0957 4.00002 7.67742 4.00002 12.0957C4.00002 14.305 4.89463 16.304 6.34317 17.7526C6.48382 17.8932 6.56284 18.084 6.56284 18.2829C6.56284 18.4818 6.48382 18.6726 6.34317 18.8132L5.06068 20.0957H12C16.4183 20.0957 20 16.514 20 12.0957C20 7.67742 16.4183 4.0957 12 4.0957Z" fill="#323544"/>
@@ -248,7 +248,7 @@ const DashBoard = () => {
                                 </Link>
 
                                 <Link to="/chat/frontEnd" onClick={() => handleClick("FrontEnd")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">FrontEnd</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.09429 7.20447C8.53365 7.64379 8.53368 8.3561 8.09436 8.79546L4.88978 12.0003L8.09432 15.2049C8.53366 15.6442 8.53366 16.3565 8.09432 16.7959C7.65498 17.2352 6.94267 17.2352 6.50333 16.7959L2.50333 12.7959C2.06401 12.3565 2.06399 11.6443 2.5033 11.2049L6.5033 7.20454C6.94262 6.76518 7.65493 6.76515 8.09429 7.20447ZM17.0034 7.20447C17.4427 6.76515 18.155 6.76518 18.5944 7.20454L22.5944 11.2049C23.0337 11.6443 23.0336 12.3565 22.5943 12.7959L18.5943 16.7959C18.155 17.2352 17.4427 17.2352 17.0033 16.7959C16.564 16.3565 16.564 15.6442 17.0033 15.2049L20.2079 12.0003L17.0033 8.79546C16.564 8.3561 16.564 7.64379 17.0034 7.20447Z" fill="#323544"/>
@@ -257,7 +257,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">Backend</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21.8377 11.6774L12.2893 2.09677C12.1603 1.96774 11.8377 1.96774 11.6442 2.09677L8.999 4.74194L11.4506 7.19355C11.6442 7.09677 11.87 7.06452 12.0958 7.06452C12.999 7.06452 13.6764 7.80645 13.6764 8.64516C13.6764 8.87097 13.6442 9.09677 13.5474 9.29032L15.5151 11.2581C15.7087 11.1613 15.9345 11.129 16.1603 11.129C17.0635 11.129 17.7409 11.871 17.7409 12.7097C17.7409 13.6129 16.999 14.2903 16.1603 14.2903C15.2571 14.2903 14.5797 13.5484 14.5797 12.7097C14.5797 12.4839 14.6119 12.2581 14.7087 12.0645L12.7409 10.0968H12.7087V13.8065C13.2893 14.0645 13.7087 14.6129 13.7087 15.2903C13.7087 16.1935 12.9667 16.871 12.128 16.871C11.2248 16.871 10.5474 16.129 10.5474 15.2903C10.5474 14.6129 10.9667 14.0323 11.5474 13.8065V10.1935C10.9667 9.93548 10.5474 9.3871 10.5474 8.70968C10.5474 8.48387 10.5797 8.25806 10.6764 8.06452L8.22481 5.6129L2.12802 11.6774C1.99899 11.8065 1.99899 12.129 2.12802 12.3226L11.7087 21.9032C11.8377 22.0323 12.1603 22.0323 12.3538 21.9032L21.9022 12.3226C21.999 12.129 21.999 11.871 21.8377 11.6774Z" fill="#323544"/>
@@ -265,7 +265,7 @@ const DashBoard = () => {
                                 </div>
 
                                 <Link to="/chat/design" onClick={() => handleClick("UI Design")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">UI Design</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 12.7351 21.3922 13.2734 20.7117 13.2734H17.0138C15.3547 13.2734 14.0098 14.6184 14.0098 16.2775C14.0098 17.0726 14.325 17.8353 14.8864 18.3984C15.4257 18.9393 15.6251 19.6836 15.4766 20.3542C15.3242 21.042 14.8035 21.6373 13.993 21.8012C13.3483 21.9317 12.6818 22 12 22C6.47715 22 2 17.5228 2 12ZM10.5723 7.9375C11.2626 7.9375 11.8223 7.37786 11.8223 6.6875C11.8223 5.99714 11.2626 5.4375 10.5723 5.4375C9.88191 5.4375 9.32227 5.99714 9.32227 6.6875C9.32227 7.37786 9.88191 7.9375 10.5723 7.9375ZM15.8965 9.34863C16.5868 9.34863 17.1465 8.78899 17.1465 8.09863C17.1465 7.40828 16.5868 6.84863 15.8965 6.84863C15.2061 6.84863 14.6465 7.40828 14.6465 8.09863C14.6465 8.78899 15.2061 9.34863 15.8965 9.34863ZM7.93555 10.5986C7.93555 9.90828 7.3759 9.34863 6.68555 9.34863C5.99519 9.34863 5.43555 9.90828 5.43555 10.5986C5.43555 11.289 5.99519 11.8486 6.68555 11.8486C7.3759 11.8486 7.93555 11.289 7.93555 10.5986ZM8.11523 17.1461C8.80559 17.1461 9.36523 16.5864 9.36523 15.8961C9.36523 15.2057 8.80559 14.6461 8.11523 14.6461C7.42488 14.6461 6.86523 15.2057 6.86523 15.8961C6.86523 16.5864 7.42488 17.1461 8.11523 17.1461Z" fill="#323544"/>
@@ -273,7 +273,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">DevOps</p>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g opacity="0.4">
@@ -291,7 +291,7 @@ const DashBoard = () => {
                                 </div>
 
                                 <Link to="/chat/tools" onClick={() => handleClick("Tools")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Tools</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4" d="M11.1385 2.29633C11.6899 2.06789 12.3094 2.06789 12.8608 2.29633L19.409 5.00923C20.1849 5.33068 20.7473 6.07313 20.7701 6.95597C20.8871 11.5013 19.4296 17.7631 13.067 21.5139C12.4101 21.9012 11.5955 21.9047 10.9353 21.5237C4.43153 17.7707 3.09402 11.4935 3.22752 6.95318C3.2534 6.07287 3.81392 5.33089 4.59034 5.00922L11.1385 2.29633ZM15.507 8.71521C15.2141 8.42231 14.7393 8.42231 14.4464 8.71521L10.9648 12.1967L9.55353 10.7854C9.26063 10.4925 8.78576 10.4926 8.49287 10.7854C8.19998 11.0783 8.19998 11.5532 8.49287 11.8461L10.4345 13.7877C10.7274 14.0806 11.2023 14.0806 11.4952 13.7877L15.507 9.77587C15.7999 9.48297 15.7999 9.0081 15.507 8.71521Z" fill="#323544"/>
@@ -308,7 +308,7 @@ const DashBoard = () => {
                     {(userRole === "DevOps") ?  
                         <div className="w-fit grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  md:gap-8 lg:gap-20 gap-2 mx-auto">
                         <Link to="/chat/general" onClick={() => handleClick("General")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">General/Team</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="1" d="M2.50002 12.0957C2.50002 6.849 6.75332 2.5957 12 2.5957C17.2467 2.5957 21.5 6.849 21.5 12.0957C21.5 17.3424 17.2467 21.5957 12 21.5957H3.25002C2.94668 21.5957 2.6732 21.413 2.55711 21.1327C2.44103 20.8525 2.50519 20.5299 2.71969 20.3154L4.77303 18.262C3.35633 16.603 2.50002 14.4488 2.50002 12.0957ZM12 4.0957C7.58174 4.0957 4.00002 7.67742 4.00002 12.0957C4.00002 14.305 4.89463 16.304 6.34317 17.7526C6.48382 17.8932 6.56284 18.084 6.56284 18.2829C6.56284 18.4818 6.48382 18.6726 6.34317 18.8132L5.06068 20.0957H12C16.4183 20.0957 20 16.514 20 12.0957C20 7.67742 16.4183 4.0957 12 4.0957Z" fill="#323544"/>
@@ -318,7 +318,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">FrontEnd</p>
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.09429 7.20447C8.53365 7.64379 8.53368 8.3561 8.09436 8.79546L4.88978 12.0003L8.09432 15.2049C8.53366 15.6442 8.53366 16.3565 8.09432 16.7959C7.65498 17.2352 6.94267 17.2352 6.50333 16.7959L2.50333 12.7959C2.06401 12.3565 2.06399 11.6443 2.5033 11.2049L6.5033 7.20454C6.94262 6.76518 7.65493 6.76515 8.09429 7.20447ZM17.0034 7.20447C17.4427 6.76515 18.155 6.76518 18.5944 7.20454L22.5944 11.2049C23.0337 11.6443 23.0336 12.3565 22.5943 12.7959L18.5943 16.7959C18.155 17.2352 17.4427 17.2352 17.0033 16.7959C16.564 16.3565 16.564 15.6442 17.0033 15.2049L20.2079 12.0003L17.0033 8.79546C16.564 8.3561 16.564 7.64379 17.0034 7.20447Z" fill="#323544"/>
@@ -327,7 +327,7 @@ const DashBoard = () => {
                                 </div>
 
                                 <Link to="/chat/backEnd" onClick={() => handleClick("Backend")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Backend</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21.8377 11.6774L12.2893 2.09677C12.1603 1.96774 11.8377 1.96774 11.6442 2.09677L8.999 4.74194L11.4506 7.19355C11.6442 7.09677 11.87 7.06452 12.0958 7.06452C12.999 7.06452 13.6764 7.80645 13.6764 8.64516C13.6764 8.87097 13.6442 9.09677 13.5474 9.29032L15.5151 11.2581C15.7087 11.1613 15.9345 11.129 16.1603 11.129C17.0635 11.129 17.7409 11.871 17.7409 12.7097C17.7409 13.6129 16.999 14.2903 16.1603 14.2903C15.2571 14.2903 14.5797 13.5484 14.5797 12.7097C14.5797 12.4839 14.6119 12.2581 14.7087 12.0645L12.7409 10.0968H12.7087V13.8065C13.2893 14.0645 13.7087 14.6129 13.7087 15.2903C13.7087 16.1935 12.9667 16.871 12.128 16.871C11.2248 16.871 10.5474 16.129 10.5474 15.2903C10.5474 14.6129 10.9667 14.0323 11.5474 13.8065V10.1935C10.9667 9.93548 10.5474 9.3871 10.5474 8.70968C10.5474 8.48387 10.5797 8.25806 10.6764 8.06452L8.22481 5.6129L2.12802 11.6774C1.99899 11.8065 1.99899 12.129 2.12802 12.3226L11.7087 21.9032C11.8377 22.0323 12.1603 22.0323 12.3538 21.9032L21.9022 12.3226C21.999 12.129 21.999 11.871 21.8377 11.6774Z" fill="#323544"/>
@@ -335,7 +335,7 @@ const DashBoard = () => {
                                 </div>
                                 </Link>
 
-                                <div className="bg-neutral-400/50 rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
+                                <div className="bg-neutral-400/50 rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 opacity-70">
                                     <p className="text-lg">UI Design</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 12.7351 21.3922 13.2734 20.7117 13.2734H17.0138C15.3547 13.2734 14.0098 14.6184 14.0098 16.2775C14.0098 17.0726 14.325 17.8353 14.8864 18.3984C15.4257 18.9393 15.6251 19.6836 15.4766 20.3542C15.3242 21.042 14.8035 21.6373 13.993 21.8012C13.3483 21.9317 12.6818 22 12 22C6.47715 22 2 17.5228 2 12ZM10.5723 7.9375C11.2626 7.9375 11.8223 7.37786 11.8223 6.6875C11.8223 5.99714 11.2626 5.4375 10.5723 5.4375C9.88191 5.4375 9.32227 5.99714 9.32227 6.6875C9.32227 7.37786 9.88191 7.9375 10.5723 7.9375ZM15.8965 9.34863C16.5868 9.34863 17.1465 8.78899 17.1465 8.09863C17.1465 7.40828 16.5868 6.84863 15.8965 6.84863C15.2061 6.84863 14.6465 7.40828 14.6465 8.09863C14.6465 8.78899 15.2061 9.34863 15.8965 9.34863ZM7.93555 10.5986C7.93555 9.90828 7.3759 9.34863 6.68555 9.34863C5.99519 9.34863 5.43555 9.90828 5.43555 10.5986C5.43555 11.289 5.99519 11.8486 6.68555 11.8486C7.3759 11.8486 7.93555 11.289 7.93555 10.5986ZM8.11523 17.1461C8.80559 17.1461 9.36523 16.5864 9.36523 15.8961C9.36523 15.2057 8.80559 14.6461 8.11523 14.6461C7.42488 14.6461 6.86523 15.2057 6.86523 15.8961C6.86523 16.5864 7.42488 17.1461 8.11523 17.1461Z" fill="#323544"/>
@@ -343,7 +343,7 @@ const DashBoard = () => {
                                 </div>
 
                                 <Link to="/chat/devOps" onClick={() => handleClick("DevOps")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">DevOps</p>
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g opacity="0.4">
@@ -362,7 +362,7 @@ const DashBoard = () => {
                                 </Link>
 
                                 <Link to="/chat/tools" onClick={() => handleClick("Tools")}>
-                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
+                                <div className="bg-black/50 backdrop-blur-lg rounded-sm px-4 sm:px-8 py-1 flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300">
                                     <p className="text-lg text-white">Tools</p>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4" d="M11.1385 2.29633C11.6899 2.06789 12.3094 2.06789 12.8608 2.29633L19.409 5.00923C20.1849 5.33068 20.7473 6.07313 20.7701 6.95597C20.8871 11.5013 19.4296 17.7631 13.067 21.5139C12.4101 21.9012 11.5955 21.9047 10.9353 21.5237C4.43153 17.7707 3.09402 11.4935 3.22752 6.95318C3.2534 6.07287 3.81392 5.33089 4.59034 5.00922L11.1385 2.29633ZM15.507 8.71521C15.2141 8.42231 14.7393 8.42231 14.4464 8.71521L10.9648 12.1967L9.55353 10.7854C9.26063 10.4925 8.78576 10.4926 8.49287 10.7854C8.19998 11.0783 8.19998 11.5532 8.49287 11.8461L10.4345 13.7877C10.7274 14.0806 11.2023 14.0806 11.4952 13.7877L15.507 9.77587C15.7999 9.48297 15.7999 9.0081 15.507 8.71521Z" fill="#323544"/>
